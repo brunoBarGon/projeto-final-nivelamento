@@ -10,21 +10,33 @@
         var numero = [null];
         var maior = numero[0];
             for (var i = 0; i < 5; i++){
-                numero[i] = parseFloat(prompt("Digite um número"));
-                if (numero[i] > maior){
-                    maior = numero[i];
+                    numero[i] = parseFloat(prompt("Digite um número"));  
+                    if (numero[i] > maior){
+                        maior = numero[i];
+                    }
+                    if(numero[i]%2 == 0 ){
+                        document.write(`${numero[i]} é par <br>`);
+                    }else{
+                        document.write(`${numero[i]} é impar <br>`);
+                    }
+                    var menor = numero[0];
+                    if (numero[i] < menor){
+                        menor = numero[i];
+                    }
+            }              
+        function repetido(){
+            var contaRepetido = 0;    
+            for (var i = 0; i < 5; i++){
+                for (var j = i+1; j < 5; j++){
+                    if (numero[i] == numero[j]){
+                        contaRepetido++;
+                        var numeroRepetido = numero[j];
+                    }
                 }
-                if(numero[i]%2 == 0 ){
-                    document.write(`${numero[i]} é par <br>`);
-                }else{
-                    document.write(`${numero[i]} é impar <br>`);
-
-                }
-                var menor = numero[0];
-                if (numero[i] < menor){
-                    menor = numero[i];
-                }    
             }
+            document.write(`O número repetido é ${numeroRepetido} e se repetiu ${contaRepetido} vezes<br>`);
+        }                
+        repetido();    
         document.write(`O maior número digitado é ${maior} <br>`);
         document.write(`O menor número digitado é ${menor} <br>`);     
         
